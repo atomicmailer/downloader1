@@ -82,9 +82,9 @@ jobs:
           
           # فشرده‌سازی
           if [ -z "${{ github.event.inputs.password }}" ]; then
-            7z a -mhe=on -mx=3 -v${{ github.event.inputs.split_size }} "$FINAL_DIR/archive.7z" "./downloaded_file"
+            7z a -mhe=on -mx=0 -v${{ github.event.inputs.split_size }} "$FINAL_DIR/archive.7z" "./downloaded_file"
           else
-            7z a -p"${{ github.event.inputs.password }}" -mhe=on -mx=3 -v${{ github.event.inputs.split_size }} "$FINAL_DIR/archive.7z" "./downloaded_file"
+            7z a -p"${{ github.event.inputs.password }}" -mhe=on -mx=0 -v${{ github.event.inputs.split_size }} "$FINAL_DIR/archive.7z" "./downloaded_file"
           fi
           
           echo "✅ فایل در $FINAL_DIR ذخیره شد"
